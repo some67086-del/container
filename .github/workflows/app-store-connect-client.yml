@@ -1,0 +1,19 @@
+name: App Store Connect Client Build
+
+on:
+  push:
+    branches: [app-store-connect-client]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  swift-build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Swift version
+        run: swift --version
+      - name: Build AppStoreConnectClient
+        run: swift build --target AppStoreConnectClient

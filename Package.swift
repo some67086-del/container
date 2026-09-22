@@ -45,6 +45,7 @@ let package = Package(
         .library(name: "ContainerOS", targets: ["ContainerOS"]),
         .library(name: "SocketForwarder", targets: ["SocketForwarder"]),
         .library(name: "TerminalProgress", targets: ["TerminalProgress"]),
+        .library(name: "AppStoreConnectClient", targets: ["AppStoreConnectClient"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/containerization.git", exact: Version(stringLiteral: scVersion)),
@@ -59,6 +60,10 @@ let package = Package(
         .package(url: "https://github.com/swiftlang/swift-docc-plugin.git", from: "1.1.0"),
     ],
     targets: [
+        .target(
+            name: "AppStoreConnectClient",
+            dependencies: []
+        ),
         .executableTarget(
             name: "container",
             dependencies: [
